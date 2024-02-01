@@ -1,7 +1,7 @@
 import express from 'express';
-import { Sequelize, DataTypes } from 'sequelize';
+import { Sequelize } from 'sequelize';
 import dotenv from 'dotenv';
-
+import mainRouter from "./routes/mainRouter.js";
 dotenv.config();
 
 const app = express();
@@ -14,7 +14,7 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
 
 
 app.get('/', (req, res) => {
-  res.send('Welcome to the API');
+  mainRouter
 });
 
 app.listen(PORT, async () => {
