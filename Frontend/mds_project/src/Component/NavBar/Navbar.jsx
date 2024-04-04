@@ -16,7 +16,7 @@ const NavigationBar = () => {
             <NavLink tag={Link} to="/">Accueil</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink tag={Link} to="/Panier">panier</NavLink>
+            <NavLink tag={Link} to="/Panier">Panier</NavLink>
           </NavItem>
           <NavItem>
             <NavLink tag={Link} to="/login">Login</NavLink>
