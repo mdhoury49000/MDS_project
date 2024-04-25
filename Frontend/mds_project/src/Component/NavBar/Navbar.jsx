@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Collapse, Navbar,Badge, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Dropdown, DropdownToggle, DropdownMenu, DropdownItem, NavbarText } from 'reactstrap';
+import { Collapse, Navbar,Badge, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Dropdown, DropdownToggle, DropdownMenu, DropdownItem, NavbarText} from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import logo from '../../../src/images/logo-autup.png'
 const NavigationBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -14,8 +15,11 @@ const NavigationBar = () => {
   const cartItemsCount = useSelector(state => state.cart.items.reduce((total, item) => total + item.quantity, 0));
 
   return (
+    
     <Navbar color="light" light expand="md">
-      <NavbarBrand href="/">Aut'up</NavbarBrand>
+      <NavbarBrand href="/">
+      <img alt="logo" src={logo} style={{width: 200}}/>
+      </NavbarBrand>
       <NavbarToggler onClick={toggleNavbar} />
       <Collapse isOpen={isOpen} navbar>
         <Nav className="mx-auto" navbar>
@@ -67,6 +71,8 @@ const NavigationBar = () => {
         </Nav>
       </Collapse>
     </Navbar>
+    
+   
   );
 };
 
