@@ -9,28 +9,36 @@ function cartReducer(state = initialState, action) {
       const { product, quantity } = action.payload;
       const existingItemIndex = state.items.findIndex(item => item.product.id === product.id);
       if (existingItemIndex >= 0) {
-        // Le produit existe déjà dans le panier, mise à jour de la quantité
-        return {
-          ...state,
-          items: state.items.map((item, index) => 
-            index === existingItemIndex ? { ...item, quantity: item.quantity + quantity } : item
-          ),
-        };
+        // Produit déjà dans le panier, mise à jour de la quantité
+        const updatedItems = state.items.map((item, index) =>
+          index === existingItemIndex ? { ...item, quantity: item.quantity + quantity } : item
+        );
+        return { ...state, items: updatedItems };
       } else {
-        // Nouvel ajout dans le panier
-        return {
-          ...state,
-          items: [...state.items, action.payload],
-        };
+        // Nouveau produit, ajout au panier
+        return { ...state, items: [...state.items, { product, quantity }] };
       }
     }
-      case 'REMOVE_FROM_CART': {
-      return {
-        ...state,
-        items: state.items.filter(item => item.product.id !== action.payload.id),
-      };
+    case 'REMOVE_ITEM': {
+      const { id, quantity } = action.payload;
+      const existingItemIndex = state.items.findIndex(item => item.product.id === id);
+      if (existingItemIndex >= 0) {
+        const updatedItem = { ...state.items[existingItemIndex], quantity: state.items[existingItemIndex].quantity - quantity };
+        if (updatedItem.quantity <= 0) {
+          // Si la quantité devient 0 ou moins, retirer l'article du panier
+          return { ...state, items: state.items.filter(item => item.product.id !== id) };
+        } else {
+          // Sinon, mettre à jour la quantité
+          return {
+            ...state,
+            items: state.items.map((item, index) =>
+              index === existingItemIndex ? updatedItem : item
+            ),
+          };
+        }
+      }
+      return state; // Si l'article n'est pas trouvé, retourner l'état actuel
     }
-    // Gérer d'autres actions si nécessaire
     default:
       return state;
   }
