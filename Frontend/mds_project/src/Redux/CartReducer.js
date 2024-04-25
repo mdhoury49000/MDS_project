@@ -1,37 +1,44 @@
 // src/redux/cartReducer.js
 const initialState = {
-  items: [], // Chaque élément sera { product: {}, quantity: 1 }
+  items: [], // Chaque élément est un objet { product: {}, quantity: 1 }
 };
 
 function cartReducer(state = initialState, action) {
   switch (action.type) {
     case 'ADD_TO_CART': {
-      const newItem = action.payload;
-      const existingItem = state.items.find(item => item.product.id === newItem.product.id);
-      if (existingItem) {
-        // Augmenter la quantité pour les articles existants
-        return {
-          ...state,
-          items: state.items.map(item =>
-            item.product.id === newItem.product.id
-              ? { ...item, quantity: item.quantity + 1 }
-              : item
-          ),
-        };
+      const { product, quantity } = action.payload;
+      const existingItemIndex = state.items.findIndex(item => item.product.id === product.id);
+      if (existingItemIndex >= 0) {
+        // Produit déjà dans le panier, mise à jour de la quantité
+        const updatedItems = state.items.map((item, index) =>
+          index === existingItemIndex ? { ...item, quantity: item.quantity + quantity } : item
+        );
+        return { ...state, items: updatedItems };
+      } else {
+        // Nouveau produit, ajout au panier
+        return { ...state, items: [...state.items, { product, quantity }] };
       }
-      // Ajouter un nouvel article
-      return {
-        ...state,
-        items: [...state.items, newItem],
-      };
     }
-    case 'REMOVE_FROM_CART': {
-      return {
-        ...state,
-        items: state.items.filter(item => item.product.id !== action.payload.id),
-      };
+    case 'REMOVE_ITEM': {
+      const { id, quantity } = action.payload;
+      const existingItemIndex = state.items.findIndex(item => item.product.id === id);
+      if (existingItemIndex >= 0) {
+        const updatedItem = { ...state.items[existingItemIndex], quantity: state.items[existingItemIndex].quantity - quantity };
+        if (updatedItem.quantity <= 0) {
+          // Si la quantité devient 0 ou moins, retirer l'article du panier
+          return { ...state, items: state.items.filter(item => item.product.id !== id) };
+        } else {
+          // Sinon, mettre à jour la quantité
+          return {
+            ...state,
+            items: state.items.map((item, index) =>
+              index === existingItemIndex ? updatedItem : item
+            ),
+          };
+        }
+      }
+      return state; // Si l'article n'est pas trouvé, retourner l'état actuel
     }
-    // Ajoutez d'autres actions si nécessaire
     default:
       return state;
   }

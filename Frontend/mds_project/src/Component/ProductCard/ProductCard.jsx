@@ -1,5 +1,6 @@
-// src/components/ProductCard.js
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../Redux/actions'; // Assurez-vous que ce chemin est correct
 import {
   Card,
   CardImg,
@@ -10,7 +11,13 @@ import {
   Badge
 } from 'reactstrap';
 
-function ProductCard({ product, onAddToCart }) {
+function ProductCard({ product }) {
+  const dispatch = useDispatch();
+
+  const handleAddToCart = () => {
+    dispatch(addToCart(product, 1)); // Ici, nous ajoutons toujours une quantité de 1, ajustez selon besoin
+  };
+
   return (
     <Card className="mb-4 shadow-sm">
       <CardImg top width="100%" src={product.image} alt={product.name} style={{ maxHeight: '200px', objectFit: 'cover' }} />
@@ -25,7 +32,7 @@ function ProductCard({ product, onAddToCart }) {
           <div>
             <Badge color="secondary">{product.state}</Badge>
           </div>
-          <Button onClick={() => onAddToCart(product)} size="sm" color="primary">Ajouter au panier</Button>
+          <Button onClick={handleAddToCart} size="sm" color="primary">Ajouter au panier</Button>
         </div>
         <div className="mt-3">
           <h6>Prix: {product.price} €</h6>
