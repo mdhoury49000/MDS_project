@@ -6,6 +6,7 @@ import Panier from './Component/Panier/Panier';
 import About from './Component/About/About';
 import RegisterForm from './Component/Register/Register';
 import CheckoutPage from './Component/Checkout/Checkout';
+import LoginForm from './Component/Login/Login';
 function App() {
   return (
     <div className="App">
@@ -15,6 +16,7 @@ function App() {
         <Route path = '/Panier' element = {<Panier/>} />
         <Route path = '/Register' element = {<RegisterForm/>} />
         <Route path = '/panier/paiement' element = {<CheckoutPage/>} />
+        <Route path = '/Login' element = {<LoginForm/>} />
       </Routes>
     </div>
   );
