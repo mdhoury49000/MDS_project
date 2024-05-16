@@ -11,3 +11,62 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.bg-home{
+  background-image: url('images/bg.png');
+  background-repeat: no-repeat;
+  height: 70vh;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap:2rem;
+  padding-right: 3rem;
+}
+
+.bg-home .col-home div{
+  display: flex;
+  justify-content: start;
+}
+
+.bg-home .title{
+  color:white;
+  font-size: 3rem;
+}
+
+.bg-home .btn{
+  border-radius: 62px;
+  background-color: white;
+  font-size:1rem;
+  padding:1.2rem 4rem;
+  margin-top: 1rem;
+}
+
+.home.section-1{
+  margin-top: 6rem;
+}
+
+.home.section-1 .carousel-inner img{
+  width:100%;
+}
+
+.home.section-2{
+  margin-top: 6rem;
+  background-color: black;
+  display: flex;
+  padding: 4rem 6rem;
+}
+
+.home.section-2 .txt{
+  color:white;
+  text-align: justify;
+}
+
+.home.section-2 .title{
+  text-align: start!important;
+  color:white;
+}
+
+.home.section-2 .imgJante{
+  width: 80%;
+}
+ 

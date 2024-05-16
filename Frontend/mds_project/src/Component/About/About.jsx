@@ -1,55 +1,48 @@
 import React from 'react';
 import { Container, Row, Col, Card, CardBody, CardTitle, CardText, Button } from 'reactstrap';
+import CarouselComponent from '../Carousel/Carousel';
 import NavigationBar from '../NavBar/Navbar';
+import imgJante from '../../images/jante.png';
+
 function About() {
   return (
     <>
     <NavigationBar/>
-    <Container>
-      <Row className="my-5">
-        <Col>
-          <h1>À propos de Nous</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</p>
+    <div className='bg-home'>
+      <Row className='row-home'>
+        <Col className='col-home'>
+        <h1 className='title'>Envie de décorer vos pièces ?</h1>
+        <div>
+          <button className='btn'>Découvrir le concept</button>
+        </div>
         </Col>
       </Row>
+    </div>
+    <div className='home section-1'>
+      <CarouselComponent/>
+    </div>
+    <div className='home section-2'>
       <Row>
-        <Col>
-          <h2>Nos Abonnements</h2>
-        </Col>
+      <Col className='col-4 d-flex flex-column justify-content-center align-items-center'>
+        <img className='imgJante' src={imgJante} alt="" />
+      </Col>
+      <Col className='col-8 d-flex flex-column justify-content-center gap-5'>
+        <h2 className='title'>Qui sommes-nous ?</h2>
+        <p className='txt'>Chez Aut'up, nous sommes convaincus que la beauté et la durabilité vont de pair. Chaque pièce de voiture que nous restaurons est traitée avec soin et créativité. Nous nous engageons à réutiliser et à préserver l'environnement.
+        <br/>
+        <br/>
+        Notre passion pour ces pièces détachées ne se limite pas à leur transformation, elle vise aussi à réduire le gaspillage et à encourager un mode de vie durable.
+        <br/>
+        <br/>
+        Découvrez dès maintenant notre collection en ligne et laissez-vous séduire par nos créations uniques. 
+        <br/>
+        <br/>
+        Vous trouverez chez nous la pièce parfaite pour embellir votre espace, tout en participant à une cause qui nous tient à cœur.</p>
+      </Col>
       </Row>
-      <Row>
-        {/* Carte Abonnement 1 */}
-        <Col md="4">
-          <Card>
-            <CardBody>
-              <CardTitle tag="h5">Abonnement Basique</CardTitle>
-              <CardText>Avec l'abonnement Basique, bénéficiez d'un accès limité à nos ressources.</CardText>
-              <Button>Choisir</Button>
-            </CardBody>
-          </Card>
-        </Col>
-        {/* Carte Abonnement 2 */}
-        <Col md="4">
-          <Card>
-            <CardBody>
-              <CardTitle tag="h5">Abonnement Premium</CardTitle>
-              <CardText>Le plan Premium offre un accès illimité à toutes nos ressources.</CardText>
-              <Button>Choisir</Button>
-            </CardBody>
-          </Card>
-        </Col>
-        {/* Carte Abonnement 3 */}
-        <Col md="4">
-          <Card>
-            <CardBody>
-              <CardTitle tag="h5">Abonnement VIP</CardTitle>
-              <CardText>Le plan VIP ajoute des services exclusifs en plus de tous les avantages du Premium.</CardText>
-              <Button>Choisir</Button>
-            </CardBody>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
+      
+    </div>
+
     </>
   );
 }
