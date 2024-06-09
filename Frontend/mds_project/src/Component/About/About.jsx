@@ -1,50 +1,46 @@
-import React from 'react';
-import { Container, Row, Col, Card, CardBody, CardTitle, CardText, Button } from 'reactstrap';
-import CarouselComponent from '../Carousel/Carousel';
+import React from 'react'
 import NavigationBar from '../NavBar/Navbar';
-import imgJante from '../../images/jante.png';
+import { Row, Col } from 'reactstrap';
+import LogoNoir from '../../images/Logo-Final-Blanc-SF.png';
+import Temoignages from '../Temoignages/Temoignages';
+import Footer from '../Footer/Footer';
 
-function About() {
+
+
+export default function About() {
   return (
     <>
     <NavigationBar/>
-    <div className='bg-home'>
-      <Row className='row-home'>
-        <Col className='col-home'>
-        <h1 className='title'>Envie de décorer vos pièces ?</h1>
-        <div>
-          <button className='btn'>Découvrir le concept</button>
-        </div>
+    <div className='bg-about'>
+      <Row>
+        <Col>
+        <h1 className='title'>Qui sommes nous ?</h1>
         </Col>
       </Row>
     </div>
-    <div className='home section-1'>
-      <CarouselComponent/>
+    <div className="about section-1">
+        <Row>
+            <img src={LogoNoir} alt="" />
+        </Row>
+        <Row>
+            <p>Chez Aut'up, nous croyons en l'union harmonieuse entre la beauté et la durabilité. Pour nous, chaque pièce de voiture recueillie est une opportunité de révéler son potentiel caché, de lui insuffler une nouvelle vie empreinte de créativité. Nous ne nous contentons pas de restaurer ces pièces, nous les récupérons avec soin, les revitalisons, et les présentons au monde sous un nouveau jour, prêtes à être réutilisées.</p>
+        </Row>
     </div>
-    <div className='home section-2'>
-      <Row>
-      <Col className='col-4 d-flex flex-column justify-content-center align-items-center'>
-        <img className='imgJante' src={imgJante} alt="" />
-      </Col>
-      <Col className='col-8 d-flex flex-column justify-content-center gap-5'>
-        <h2 className='title'>Qui sommes-nous ?</h2>
-        <p className='txt'>Chez Aut'up, nous sommes convaincus que la beauté et la durabilité vont de pair. Chaque pièce de voiture que nous restaurons est traitée avec soin et créativité. Nous nous engageons à réutiliser et à préserver l'environnement.
-        <br/>
-        <br/>
-        Notre passion pour ces pièces détachées ne se limite pas à leur transformation, elle vise aussi à réduire le gaspillage et à encourager un mode de vie durable.
-        <br/>
-        <br/>
-        Découvrez dès maintenant notre collection en ligne et laissez-vous séduire par nos créations uniques. 
-        <br/>
-        <br/>
-        Vous trouverez chez nous la pièce parfaite pour embellir votre espace, tout en participant à une cause qui nous tient à cœur.</p>
-      </Col>
-      </Row>
-      
-    </div>
+    <div className="about section-2">
+        <Row>
+            <p>Notre engagement environnemental va bien au-delà de la simple restauration. En offrant une seconde chance à ces pièces automobiles, nous évitons qu'elles ne finissent dans des décharges, préservant ainsi les ressources de notre planète et promouvant un mode de vie durable.
 
+Découvrez notre vaste collection en ligne, où chaque pièce a une histoire unique. Nos pièces allient esthétique et conscience écologique. Que vous recherchiez une pièce rare pour votre collection personnelle ou que vous souhaitiez simplement ajouter une touche d'originalité à votre espace, Aut'up a la pièce parfaite pour vous.</p>
+        </Row>
+    </div>
+    <div className="about section-3">
+        <h2>Témoignages et avis</h2>
+        <Row className='row-bloc'>
+            <Temoignages/>
+            <Temoignages/>
+        </Row>
+    </div>
+    <Footer/>
     </>
-  );
+  )
 }
-
-export default About;
