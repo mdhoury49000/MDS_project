@@ -1,57 +1,46 @@
-import React from 'react';
-import { Container, Row, Col, Card, CardBody, CardTitle, CardText, Button } from 'reactstrap';
+import React from 'react'
 import NavigationBar from '../NavBar/Navbar';
-function About() {
+import { Row, Col } from 'reactstrap';
+import LogoNoir from '../../images/Logo-Final-Blanc-SF.png';
+import Temoignages from '../Temoignages/Temoignages';
+import Footer from '../Footer/Footer';
+
+
+
+export default function About() {
   return (
     <>
     <NavigationBar/>
-    <Container>
-      <Row className="my-5">
-        <Col>
-          <h1>À propos de Nous</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</p>
-        </Col>
-      </Row>
+    <div className='bg-about'>
       <Row>
         <Col>
-          <h2>Nos Abonnements</h2>
+        <h1 className='title'>Qui sommes nous ?</h1>
         </Col>
       </Row>
-      <Row>
-        {/* Carte Abonnement 1 */}
-        <Col md="4">
-          <Card>
-            <CardBody>
-              <CardTitle tag="h5">Abonnement Basique</CardTitle>
-              <CardText>Avec l'abonnement Basique, bénéficiez d'un accès limité à nos ressources.</CardText>
-              <Button>Choisir</Button>
-            </CardBody>
-          </Card>
-        </Col>
-        {/* Carte Abonnement 2 */}
-        <Col md="4">
-          <Card>
-            <CardBody>
-              <CardTitle tag="h5">Abonnement Premium</CardTitle>
-              <CardText>Le plan Premium offre un accès illimité à toutes nos ressources.</CardText>
-              <Button>Choisir</Button>
-            </CardBody>
-          </Card>
-        </Col>
-        {/* Carte Abonnement 3 */}
-        <Col md="4">
-          <Card>
-            <CardBody>
-              <CardTitle tag="h5">Abonnement VIP</CardTitle>
-              <CardText>Le plan VIP ajoute des services exclusifs en plus de tous les avantages du Premium.</CardText>
-              <Button>Choisir</Button>
-            </CardBody>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
-    </>
-  );
-}
+    </div>
+    <div className="about section-1">
+        <Row>
+            <img src={LogoNoir} alt="" />
+        </Row>
+        <Row>
+            <p>Chez Aut'up, nous croyons en l'union harmonieuse entre la beauté et la durabilité. Pour nous, chaque pièce de voiture recueillie est une opportunité de révéler son potentiel caché, de lui insuffler une nouvelle vie empreinte de créativité. Nous ne nous contentons pas de restaurer ces pièces, nous les récupérons avec soin, les revitalisons, et les présentons au monde sous un nouveau jour, prêtes à être réutilisées.</p>
+        </Row>
+    </div>
+    <div className="about section-2">
+        <Row>
+            <p>Notre engagement environnemental va bien au-delà de la simple restauration. En offrant une seconde chance à ces pièces automobiles, nous évitons qu'elles ne finissent dans des décharges, préservant ainsi les ressources de notre planète et promouvant un mode de vie durable.
 
-export default About;
+Découvrez notre vaste collection en ligne, où chaque pièce a une histoire unique. Nos pièces allient esthétique et conscience écologique. Que vous recherchiez une pièce rare pour votre collection personnelle ou que vous souhaitiez simplement ajouter une touche d'originalité à votre espace, Aut'up a la pièce parfaite pour vous.</p>
+        </Row>
+    </div>
+    <div className="about section-3">
+        <h2>Témoignages et avis</h2>
+        <Row className='row-bloc'>
+            <Temoignages/>
+            <Temoignages/>
+        </Row>
+    </div>
+    <Footer/>
+    </>
+  )
+}

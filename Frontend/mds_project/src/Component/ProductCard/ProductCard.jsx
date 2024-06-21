@@ -8,7 +8,10 @@ import {
   CardTitle,
   CardText,
   Button,
-  Badge
+  Badge,
+  Row,
+  Col,
+  Container,
 } from 'reactstrap';
 
 function ProductCard({ product }) {
@@ -19,26 +22,30 @@ function ProductCard({ product }) {
   };
 
   return (
-    <Card className="mb-4 shadow-sm">
-      <CardImg top width="100%" src={product.image} alt={product.name} style={{ maxHeight: '200px', objectFit: 'cover' }} />
+    <Card className="piece-card">
+      {/* <CardImg width="100%" src={product.image} alt={product.name} style={{objectFit: 'cover' }} /> */}
+      <img src={product.image} alt="" style={{ width: '100%', height: 'auto', objectFit: 'none' }} />
       <CardBody>
-        <CardTitle tag="h5">{product.name}</CardTitle>
-        <CardText>{product.description}</CardText>
-        <CardText>
-          <small className="text-muted">Type: {product.vehicleType}</small><br />
-          <small className="text-muted">Nature: {product.partNature}</small>
-        </CardText>
-        <div className="d-flex justify-content-between align-items-center">
-          <div>
-            <Badge color="secondary">{product.state}</Badge>
-          </div>
-          <Button onClick={handleAddToCart} size="sm" color="primary">Ajouter au panier</Button>
-        </div>
-        <div className="mt-3">
-          <h6>Prix: {product.price} €</h6>
-        </div>
+        <Row className='row-1'>
+          <Col className='col-title'><CardTitle tag="h5">{product.name}</CardTitle></Col>
+          <Col><p className='price'>{product.price} €</p></Col>
+        </Row>
+        <Row className='row-2'>
+          <Col>
+            <Row className='description'><p className='content'><strong>Marque : </strong>{product.marque}</p></Row>
+            <Row className='description'><p className='content'><strong>Modèle : </strong>{product.modele}</p></Row>
+          </Col>
+          <Col>
+            <Row className='description'><p className='content'><strong>Vendeur : </strong>{product.vendeur}</p></Row>
+            <Row className='description'><p className='content'><strong>Lieu : </strong>{product.lieu}</p></Row>
+          </Col> 
+        </Row>
+        <Row className='row-3'>
+        <Button onClick={handleAddToCart} size="sm">Ajouter au panier</Button>
+        </Row>
       </CardBody>
     </Card>
+
   );
 }
 
