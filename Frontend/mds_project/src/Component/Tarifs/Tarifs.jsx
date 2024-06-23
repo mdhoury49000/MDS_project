@@ -28,18 +28,45 @@ export default function Tarifs() {
     </div>
     <div className="tarifs section-2">
         <h2>Nos pack</h2>
-        <div className='pack'>
-            <Row>
-                <img src={packStandard} alt="" />
-                <h3>Pack standard</h3>
-            </Row>
+        <Row className='pack-section'>
+        <div className='pack pack-S'>
+          <Row>
+            <h3>Pack Standard</h3>
+          </Row>
+            
             <Row>
                 <p>Notre Pack Standard offre une visibilité de base pour vos créations. Idéal pour les artistes émergents, ce pack inclut la mise en avant de cinq pièces sur notre plateforme pendant un mois.</p>
             </Row>
-            <Row>
-                <a href=""><img src={panierPack} alt="" /></a>
-            </Row>
+                <a className='btn' href=""><img src={panierPack} alt="" /></a>
         </div>
+        </Row>
+        <Row  className='space-section'></Row>
+        <Row className='pack-section'>
+        <div className='pack pack-M'>
+          <Row>
+            <h3>Pack Médium</h3>
+          </Row>
+            
+            <Row className='pack-conternt'>
+                <p>Le Pack Médium est parfait pour les artistes souhaitant augmenter leur visibilité. Il inclut la mise en avant de 15 pièces pendant trois mois, des promotions régulières sur nos réseaux sociaux.</p>
+            </Row>
+                <a className='btn' href=""><img src={panierPack} alt="" /></a>
+        </div>
+        </Row>
+        <Row className='space-section'></Row>
+        <Row className='pack-section'>
+        <div className='pack pack-P'>
+          <Row>
+            <h3>Pack Premium</h3>
+          </Row>
+            
+            <Row className='pack-content'>
+                <p>Pour une visibilité maximale, choisissez notre Pack Professionnel. Il inclut la mise en avant illimitée de vos œuvres pendant six mois, des promotions sur nos réseaux sociaux, une place dans notre newsletter, et une page dédiée à votre profil d'artiste sur notre site.</p>
+            </Row>
+                <a className='btn' href=""><img src={panierPack} alt="" /></a>
+        </div>
+        </Row>
+        
     </div>
     <Footer/>
     </>

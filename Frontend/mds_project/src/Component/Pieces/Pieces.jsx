@@ -42,6 +42,16 @@ function HomePage() {
   return (
     <>
     <NavigationBar />
+    <div className='bg-pieces'>
+      <Row className='row-pieces'>
+        <Col className='col-pieces'>
+        <h1 className='title'>Envie d'acheter des pièces ?</h1>
+        <div>
+          <a href="" className='btn'>Découvrir le concept</a>
+        </div>
+        </Col>
+      </Row>
+    </div>
     <div className='piece-page space'></div>
     <Container>
       <Row>

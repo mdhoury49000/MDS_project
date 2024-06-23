@@ -367,7 +367,249 @@ font-family: 'against';
   text-align: start;
 }
 .tarifs.section-2 .pack .row img{
-  
+  width: 80px;
 }
+.tarifs.section-2 h2{
+  text-align: start;
+  font-family: 'against';
+  text-transform: uppercase;
+  color: #FF0000;
+  margin-bottom: 3rem;
+  font-size: 3rem;
+}
+.tarifs.section-2 .pack-S h3::before{
+content:url('images/pack-S.png');
+position: relative;
+left: -80px;
+top: 30px;
+}
+.tarifs.section-2 .pack-M h3::before{
+content:url('images/pack-M.png');
+position: relative;
+left: -80px;
+top: 30px;
+}
+.tarifs.section-2 .pack-P h3::before{
+content:url('images/pack-P.png');
+position: relative;
+left: -80px;
+top: 30px;
+}
+.tarifs.section-2 .pack h3{
+  margin-bottom: 5rem;
+  font-family: 'against';
+}
+.tarifs.section-2 .pack{
+  box-shadow: 11px 3px 52px rgba(0, 0, 0, 0.16);
+  width: 99%;
+padding-bottom: 2rem;
+}
+.tarifs.section-2{
+  padding:2rem;
+}
+.tarifs.section-2 .pack-section{
+  justify-content: center;
+}
+.tarifs.section-2 .pack .btn{
+  margin-top: 1rem;
+border-radius: 50%;
+padding: 1rem;
+box-shadow: 3px 7px 8px rgba(0, 0, 0, 0.16);
+}
+.tarifs.section-2 .pack .btn img{
+  width: 50px;
+}
+.space-section{
+  height: 50px;
+}
+.bg-artistes{
+  background-image: url('images/bg-artistes.png');
+  background-repeat: no-repeat;
+  height: 70vh;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap:2rem;
+  padding-right: 3rem;
+}
+.bg-artistes .title{
+  color:white;
+  font-size: 3rem;
+  font-family:'against';
+}
+.bg-pieces{
+  background-image: url('images/bg-pieces.png');
+  background-repeat: no-repeat;
+  height: 70vh;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap:2rem;
+  padding-right: 3rem;
+}
+.bg-pieces .title{
+  color:white;
+  font-size: 3rem;
+  font-family:'against';
+}
+
+.bg-artistes .col-artistes div{
+  display: flex;
+  justify-content: start;
+}
+.bg-artistes .btn{
+  border-radius: 62px;
+  background-color: white;
+  font-size:1rem;
+  padding:1.2rem 4rem;
+  margin-top: 1rem;
+
+}
+.bg-pieces .col-pieces div{
+  display: flex;
+  justify-content: start;
+}
+.bg-pieces .btn{
+  border-radius: 62px;
+  background-color: white;
+  font-size:1rem;
+  padding:1.2rem 4rem;
+  margin-top: 1rem;
+
+}
+.bg-inspirations{
+  background-image: url('images/bg-inspirations.png');
+  background-repeat: no-repeat;
+  height: 70vh;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap:2rem;
+  padding-right: 3rem;
+}
+.bg-inspirations .title{
+  color:white;
+  font-size: 3rem;
+  font-family:'against';
+}
+.section-inspiration h3{
+font-family: 'against';
+text-align: start;
+}
+.section-inspiration .row{
+  padding: 2rem;
+}
+.bg-contact{
+  background-image: url('images/bg-contact.png');
+  background-repeat: no-repeat;
+  height: 70vh;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap:2rem;
+  padding-right: 3rem;
+}
+.bg-contact .title{
+  color:white;
+  font-size: 3rem;
+  font-family:'against';
+}
+.bloc-noir{
+  background-color: black;
+  color: white;
+  padding: 2rem!important;
+  width: 98vw!important;
+}
+.bloc{
+  justify-content: center;
+}
+.title-contact{
+  margin: 2rem 0!important;
+}
+.title-contact h2{
+  font-family: 'against';
+  text-align: start;
+  color: #FF0000;
+  text-transform: uppercase;
+  margin-left: 2rem;
+}
+.bloc-noir h3{
+  font-weight: 600;
+  text-align: start;
+}
+.bloc-noir p{
+  text-align: start;
+  font-weight: 100;
+}
+.info-row{
+  margin:2rem 0!important
+}
+.info-row p{
+  text-align: start;
+  padding-left: 2rem;
+  font-weight: 200;
+}
+.contact-form form{
+  box-shadow: 0px 3px 48px rgba(0, 0, 0, 0.16);
+  padding: 2rem;
+
+}
+.contact-form{
+  padding: 2rem;
+}
+.contact-form label{
+  font-weight: 800;
+}
+.contact-form form .col, .contact-form form .message-row{
+  text-align: start;
+}
+.contact-form form .prenom-label{
+  visibility: hidden;
+}
+.contact-form form .title{
+  text-align: start;
+  margin-bottom: 2rem;
+}
+.contact-form form button{
+  color: white;
+  background-color: #FF0000;
+  border: none;
+  width: 20%;
+  font-weight: 800;
+}
+.section-login{
+  background-image: url('./images/bg-login.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 72vh;
+  display: flex;
+  align-items: center;
+}
+.section-login form{
+  background-color: white;
+  padding: 2rem;
+  border: 1px solid #707070 ;
+  border-radius: 25px;
+}
+.section-login form .row,.section-login form .formgroup{
+  text-align: start;
+}
+.section-login form .etoile{
+  color: #FF0000;
+}
+.section-login form button{
+  color:white!important;
+  background-color: red!important;
+  border: none;
+  width: 50%;
+  border-radius: 20px;
+}
+.section-login form input{
+  border-radius: 20px;
+}
+.section-login form .info{
+  font-size: .7rem;
+}
+
 
 

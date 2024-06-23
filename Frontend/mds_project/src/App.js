@@ -9,6 +9,9 @@ import RegisterForm from './Component/Register/Register';
 import CheckoutPage from './Component/Checkout/Checkout';
 import LoginForm from './Component/Login/Login';
 import Tarifs from './Component/Tarifs/Tarifs';
+import Artistes from './Component/Artistes/Artistes';
+import Inspirations from './Component/Inspirations/Inspirations';
+import Contact from './Component/Contact/Contact';
 function App() {
   return (
     <div className="App">
@@ -21,6 +24,9 @@ function App() {
         <Route path = '/panier/paiement' element = {<CheckoutPage/>} />
         <Route path = '/Login' element = {<LoginForm/>} />
         <Route path = '/Tarifs' element = {<Tarifs/>} />
+        <Route path = '/Artistes' element = {<Artistes/>} />
+        <Route path = '/Inspirations' element = {<Inspirations/>} />
+        <Route path = '/Contact' element = {<Contact/>} />
       </Routes>
     </div>
   );
